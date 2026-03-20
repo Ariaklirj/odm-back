@@ -1,0 +1,79 @@
+ {
+    "slug": "tsu-desarrollo-humano",
+    "type": "Tecnico Superior",
+    "name": "TSU en Desarrollo Humano y Administración Empresarial",
+    "tagline": "Desarrolla habilidades administrativas y liderazgo para integrarte rápidamente al mundo laboral",
+    "description": "Técnico Superior Universitario te prepara para administrar procesos empresariales con enfoque en desarrollo humano. Aprenderás a mejorar la productividad, fortalecer la comunicación organizacional y aplicar herramientas administrativas que impacten directamente en los resultados de la empresa. Es un programa práctico, enfocado en la aplicación inmediata en el entorno laboral.",
+    "bannerImageS3": "",
+    "generalInfo": {
+      "duration": "6 cuatrimestres (2 años)",
+      "schedule": "24/7 tú eliges tus propios tiempos de estudio.",
+      "subjects": "41 asignaturas",
+      "graduation": [
+        "Promedio mayor a 9",
+        "Examen general",
+        "Memoria de experiencia profesional",
+        "Diplomado"
+      ]
+    },
+    "whatYouWillLearn": [
+      {
+        "category": "Desarrollo personal y liderazgo",
+        "subjects": [
+          "Inteligencia emocional",
+          "Liderazgo interpersonal",
+          "Manejo de conflictos",
+          "Trabajo en equipo",
+          "Comunicación efectiva"
+        ]
+      },
+      {
+        "category": "Gestión empresarial",
+        "subjects": [
+          "Administración",
+          "Planeación estratégica",
+          "Productividad y calidad",
+          "Administración del flujo de efectivo",
+          "Mercadotecnia y ventas"
+        ]
+      },
+      {
+        "category": "Herramientas organizacionales",
+        "subjects": [
+          "Negociación efectiva",
+          "Alineación organizacional",
+          "Salud laboral",
+          "Manejo del estrés",
+          "Desarrollo de la creatividad"
+        ]
+      },
+      {
+        "category": "Herramientas digitales",
+        "subjects": [
+          "Manejo de herramientas informáticas",
+          "Aplicación tecnológica en procesos administrativos"
+        ]
+      }
+    ],
+    "graduateProfile": [
+      "Administrar procesos empresariales con enfoque estratégico",
+      "Liderar equipos de trabajo con inteligencia emocional",
+      "Diseñar estrategias de comunicación y negociación",
+      "Aplicar herramientas tecnológicas en la gestión empresarial",
+      "Optimizar procesos para mejorar productividad y resultados"
+    ],
+    "careerField": [
+      "Instituciones educativas",
+      "Hospitales",
+      "Empresas del sector industrial y automotriz",
+      "Instituciones financieras",
+      "Micro y pequeñas empresas",
+      "Sector público y privado"
+    ],
+    "costs": {
+      "tuition": "$3,500 mensual",
+      "enrollment": "$3,000 una sola exhibición",
+      "reenrollment": "$1,500 por período",
+      "graduation": "$10,000 una sola exhibición"
+    }
+  }

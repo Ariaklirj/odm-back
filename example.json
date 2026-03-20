@@ -1,0 +1,319 @@
+[
+ 
+  {
+    "slug": "lic-capital-humano",
+    "type": "Licenciatura",
+    "name": "Licenciatura en Desarrollo y Administración del Capital Humano",
+    "tagline": "Impulsa el talento, transforma organizaciones y lidera equipos estratégicamente.",
+    "description": "Esta licenciatura te prepara para gestionar, desarrollar y potenciar el talento dentro de las organizaciones. Aprenderás a diseñar estrategias de capital humano, fortalecer la cultura organizacional y generar entornos laborales productivos, éticos y alineados a objetivos empresariales.",
+    "bannerImageS3": "",
+    "generalInfo": {
+      "duration": "9 cuatrimestres (3 años)",
+      "schedule": "24/7 tú eliges tus propios tiempos de estudio.",
+      "subjects": "59 asignaturas",
+      "graduation": [
+        "Promedio mayor a 9",
+        "Examen general",
+        "Memoria de experiencia profesional",
+        "Diplomado"
+      ]
+    },
+    "whatYouWillLearn": [
+      {
+        "category": "Formación en liderazgo y desarrollo personal",
+        "subjects": [
+          "Inteligencia emocional",
+          "Comunicación efectiva",
+          "Liderazgo transformador",
+          "Manejo de conflictos"
+        ]
+      },
+      {
+        "category": "Gestión estratégica del talento",
+        "subjects": [
+          "Dirección estratégica del capital humano",
+          "Diagnóstico organizacional",
+          "Alineación organizacional",
+          "Gestión del potencial humano"
+        ]
+      },
+      {
+        "category": "Marco legal y normativo",
+        "subjects": [
+          "Derecho laboral",
+          "Previsión y seguridad social",
+          "Cumplimiento normativo"
+        ]
+      },
+      {
+        "category": "Herramientas empresariales",
+        "subjects": [
+          "Administración",
+          "Planeación estratégica",
+          "Mercadotecnia",
+          "Manejo de herramientas informáticas"
+        ]
+      }
+    ],
+    "graduateProfile": [
+      "Diseñar estrategias de desarrollo organizacional",
+      "Implementar programas de capacitación y alineación empresarial",
+      "Gestionar procesos de talento bajo marco legal vigente",
+      "Resolver conflictos organizacionales con liderazgo y visión estratégica",
+      "Optimizar la cultura y el desempeño empresarial"
+    ],
+    "careerField": [
+      "Empresas del sector industrial y corporativo",
+      "Consultoras de Recursos Humanos",
+      "Instituciones públicas",
+      "Organizaciones sin fines de lucro",
+      "Emprendimientos propios en gestión del talento"
+    ],
+    "costs": {
+      "tuition": "$3,500 mensual",
+      "enrollment": "$3,000 una sola exhibición",
+      "reenrollment": "$1,500 por período",
+      "graduation": "$10,000 una sola exhibición"
+    }
+  },
+  {
+    "slug": "lic-finanzas-administracion",
+    "type": "Licenciatura",
+    "name": "Licenciatura en Desarrollo Humano, Finanzas y Administración",
+    "tagline": "Domina las finanzas, lidera equipos y toma decisiones estratégicas que generen valor real.",
+    "description": "Esta licenciatura combina administración, finanzas y desarrollo humano para formar profesionales capaces de diseñar, evaluar y gestionar proyectos de inversión con visión estratégica. Aprenderás a analizar riesgos, optimizar recursos financieros y tomar decisiones fundamentadas que impulsen el crecimiento de las organizaciones, integrando herramientas técnicas y liderazgo humano.",
+    "bannerImageS3": "",
+    "generalInfo": {
+      "duration": "9 cuatrimestres (3 años)",
+      "schedule": "24/7 tú eliges tus propios tiempos de estudio.",
+      "subjects": "60 asignaturas",
+      "graduation": [
+        "Promedio mayor a 9",
+        "Examen general",
+        "Memoria de experiencia profesional",
+        "Diplomado"
+      ]
+    },
+    "whatYouWillLearn": [
+      {
+        "category": "Finanzas y proyectos de inversión",
+        "subjects": [
+          "Evaluación de proyectos de inversión",
+          "Matemáticas financieras",
+          "Administración del ciclo financiero",
+          "Indicadores de evaluación financiera",
+          "Administración de riesgos"
+        ]
+      },
+      {
+        "category": "Gestión financiera y presupuestal",
+        "subjects": [
+          "Presupuestos y control presupuestal",
+          "Estrategias de financiamiento",
+          "Contabilidad de costos",
+          "Análisis financiero estratégico"
+        ]
+      },
+      {
+        "category": "Administración estratégica",
+        "subjects": [
+          "Planeación estratégica",
+          "Administración por estadísticas",
+          "Análisis situacional de procesos administrativos",
+          "Dirección estratégica financiera"
+        ]
+      },
+      {
+        "category": "Desarrollo humano y liderazgo",
+        "subjects": [
+          "Administración del capital emocional",
+          "Trabajo en equipo",
+          "Comunicación efectiva",
+          "Liderazgo organizacional"
+        ]
+      }
+    ],
+    "graduateProfile": [
+      "Evaluar la viabilidad financiera de proyectos de inversión",
+      "Diseñar estrategias de financiamiento y administración de riesgos",
+      "Implementar sistemas de control presupuestal",
+      "Tomar decisiones estratégicas basadas en análisis financiero",
+      "Liderar equipos con enfoque humano y visión empresarial"
+    ],
+    "careerField": [
+      "Sector público",
+      "Empresas pequeñas, medianas y grandes",
+      "Bancos",
+      "Fondos de inversión",
+      "Entidades de análisis de riesgos",
+      "Organizaciones financieras",
+      "Consultoras"
+    ],
+    "costs": {
+      "tuition": "$3,500 mensual",
+      "enrollment": "$3,000 una sola exhibición",
+      "reenrollment": "$1,500 por período",
+      "graduation": "$10,000 una sola exhibición"
+    }
+  },
+  {
+    "slug": "lic-productividad-calidad",
+    "type": "Licenciatura",
+    "name": "Licenciatura en Desarrollo Humano, Productividad y Calidad",
+    "tagline": "Optimiza procesos, eleva estándares y lidera la mejora continua en las organizaciones.",
+    "description": "Esta licenciatura forma profesionales capaces de mejorar la productividad y garantizar estándares de calidad en organizaciones públicas y privadas. Aprenderás a diseñar, implementar y evaluar sistemas de calidad total, optimizar procesos productivos y liderar equipos estratégicos enfocados en resultados medibles. Es una carrera ideal para quienes buscan impacto operativo y estratégico dentro de las empresas.",
+    "bannerImageS3": "",
+    "generalInfo": {
+      "duration": "9 cuatrimestres (3 años)",
+      "schedule": "24/7 tú eliges tus propios tiempos de estudio.",
+      "subjects": "60 asignaturas",
+      "graduation": [
+        "Promedio mayor a 9",
+        "Examen general",
+        "Memoria de experiencia profesional",
+        "Diplomado"
+      ]
+    },
+    "whatYouWillLearn": [
+      {
+        "category": "Gestión de calidad total",
+        "subjects": [
+          "Modelos y teorías de calidad",
+          "Control total de calidad",
+          "Control estadístico de procesos",
+          "Sistemas de certificación",
+          "Despliegue de la función de calidad"
+        ]
+      },
+      {
+        "category": "Productividad y mejora continua",
+        "subjects": [
+          "Administración de la productividad",
+          "Costos de calidad",
+          "Sistemas de mantenimiento productivo total",
+          "Desarrollo de cadenas de valor",
+          "Evaluación de servicios y productos"
+        ]
+      },
+      {
+        "category": "Gestión organizacional",
+        "subjects": [
+          "Planeación estratégica",
+          "Comportamiento organizacional",
+          "Equipos de alto desempeño",
+          "Liderazgo estratégico"
+        ]
+      },
+      {
+        "category": "Desarrollo humano aplicado",
+        "subjects": [
+          "Trabajo en equipo",
+          "Comunicación efectiva",
+          "Administración del capital emocional",
+          "Cultura organizacional"
+        ]
+      }
+    ],
+    "graduateProfile": [
+      "Diseñar e implementar sistemas de calidad total",
+      "Optimizar procesos productivos y administrativos",
+      "Medir y evaluar estándares de desempeño",
+      "Liderar equipos enfocados en mejora continua",
+      "Asesorar organizaciones en certificaciones y control de calidad"
+    ],
+    "careerField": [
+      "Sector empresarial",
+      "Sector público",
+      "Áreas económicas",
+      "Sector agrícola",
+      "Recursos Humanos"
+    ],
+    "costs": {
+      "tuition": "$3,500 mensual",
+      "enrollment": "$3,000 una sola exhibición",
+      "reenrollment": "$1,500 por período",
+      "graduation": "$10,000 una sola exhibición"
+    }
+  },
+  {
+    "slug": "lic-mercadotecnia-promocion",
+    "type": "Licenciatura",
+    "name": "Licenciatura en Desarrollo Humano, Mercadotecnia y Promoción",
+    "tagline": "Diseña estrategias de mercado, posiciona marcas y conecta con el consumidor desde un enfoque humano y estratégico.",
+    "description": "Esta licenciatura integra mercadotecnia, promoción y desarrollo humano para formar profesionales capaces de diseñar estrategias comerciales efectivas, comprender el comportamiento del consumidor y posicionar marcas en entornos competitivos. Aprenderás a combinar análisis de mercado, creatividad, comunicación estratégica y herramientas digitales para generar impacto real en organizaciones públicas y privadas.",
+    "bannerImageS3": "",
+    "generalInfo": {
+      "duration": "9 cuatrimestres (3 años)",
+      "schedule": "24/7 tú eliges tus propios tiempos de estudio.",
+      "subjects": "60 asignaturas",
+      "graduation": [
+        "Promedio mayor a 9",
+        "Examen general",
+        "Memoria de experiencia profesional",
+        "Diplomado"
+      ]
+    },
+    "whatYouWillLearn": [
+      {
+        "category": "Investigación y análisis de mercados",
+        "subjects": [
+          "Investigación de mercados",
+          "Comportamiento del consumidor",
+          "Estratificación de mercados",
+          "Análisis de tendencias y entorno",
+          "Diseño de nuevos productos y servicios"
+        ]
+      },
+      {
+        "category": "Estrategia mercadológica y posicionamiento",
+        "subjects": [
+          "Estrategias mercadológicas",
+          "Administración y estrategia de producto y marca",
+          "Publicidad y comunicación estratégica",
+          "Mercadotecnia de servicios",
+          "Sistemas y canales de distribución"
+        ]
+      },
+      {
+        "category": "Marketing digital y tendencias",
+        "subjects": [
+          "Mercadotecnia y negocios digitales",
+          "Neuromarketing",
+          "Aplicación de TIC en estrategias comerciales"
+        ]
+      },
+      {
+        "category": "Desarrollo humano aplicado al marketing",
+        "subjects": [
+          "Administración del capital emocional",
+          "Liderazgo transformador",
+          "Trabajo en equipo",
+          "Comunicación efectiva",
+          "Negociación y manejo de conflictos"
+        ]
+      }
+    ],
+    "graduateProfile": [
+      "Diseñar estrategias de mercadotecnia basadas en análisis de mercado",
+      "Evaluar comportamientos de consumo y detectar oportunidades",
+      "Crear campañas de comunicación y publicidad estratégicas",
+      "Desarrollar propuestas comerciales innovadoras",
+      "Integrar desarrollo humano y liderazgo en entornos empresariales"
+    ],
+    "careerField": [
+      "Agencias de publicidad",
+      "Consultorías de mercadotecnia",
+      "Equipos de investigación de mercados",
+      "Equipos creativos",
+      "Marketing educativo",
+      "Medios de comunicación",
+      "Instituciones públicas y privadas"
+    ],
+    "costs": {
+      "tuition": "$3,500 mensual",
+      "enrollment": "$3,000 una sola exhibición",
+      "reenrollment": "$1,500 por período",
+      "graduation": "$10,000 una sola exhibición"
+    }
+  }
+]
