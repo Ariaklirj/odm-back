@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5001;
 
 connectDB();
 
-app.use(cors({ origin: process.env.FRONTEND_BASE_URL }));
+app.use(cors({ origin: process.env.BASE_FRONT_URL }));
 app.use(express.json());
 
 app.use('/api', routes);

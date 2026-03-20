@@ -122,7 +122,7 @@ const createCharge = async (req, res, next) => {
       userData.userId = user._id;
       await userData.save();
 
-      const portalUrl = `${process.env.FRONTEND_BASE_URL}/portal`;
+      const portalUrl = `${process.env.BASE_FRONT_URL}/portal`;
       await transporter.sendMail({
         from: process.env.SMTP_FROM,
         to: userData.email,

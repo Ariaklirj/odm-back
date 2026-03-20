@@ -1,0 +1,135 @@
+name: 🚀 Build, Push & Deploy Backend via ECR
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy-backend:
+    runs-on: ubuntu-latest
+    environment: OdmBack
+
+    env:
+      # AWS / ECR
+      AWS_ACCESS_KEY_ID:     ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION:            ${{ secrets.AWS_REGION }}
+      AWS_ECR_URI:           ${{ secrets.AWS_ECR_URI }}
+
+      # EC2 SSH
+      SERVER_HOST:           ${{ secrets.SERVER_HOST }}
+      SERVER_USER:           ${{ secrets.SERVER_USER }}
+      SSH_PRIVATE_KEY:       ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Puerto del servicio
+      PORT:                  ${{ secrets.PORT }}
+
+      # Variables del backend ODM
+      MONGO_URI:             ${{ secrets.MONGO_URI }}
+      BASE_FRONT_URL:        ${{ secrets.BASE_FRONT_URL }}
+      GMAIL_APP_TOKEN:       ${{ secrets.GMAIL_APP_TOKEN }}
+      GMAIL_MAIL:            ${{ secrets.GMAIL_MAIL }}
+      SMTP_FROM:             ${{ secrets.SMTP_FROM }}
+      OPENPAY_COMERCE_ID:    ${{ secrets.OPENPAY_COMERCE_ID }}
+      OPENPAY_PUBLIC_KEY:    ${{ secrets.OPENPAY_PUBLIC_KEY }}
+      OPENPAY_API_URL:       ${{ secrets.OPENPAY_API_URL }}
+      OPENPAY_SECRET_KEY:    ${{ secrets.OPENPAY_SECRET_KEY }}
+      ENCRYPTION_KEY:        ${{ secrets.ENCRYPTION_KEY }}
+      JWT_SECRET:            ${{ secrets.JWT_SECRET }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Validate required env vars
+        run: |
+          for var in AWS_ECR_URI PORT SERVER_HOST SERVER_USER SSH_PRIVATE_KEY AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_REGION; do
+            if [ -z "${!var}" ]; then
+              echo "::error::$var is not set"
+              exit 1
+            fi
+          done
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id:     ${{ env.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+          aws-region:            ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build & Push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.AWS_ECR_URI }}:latest
+            ${{ env.AWS_ECR_URI }}:${{ github.sha }}
+
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "$SERVER_HOST" >> ~/.ssh/known_hosts || true
+
+      - name: Publish .env & Deploy on EC2
+        run: |
+          ssh -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_HOST <<EOF
+          # 1) Crear ~/.env en el servidor con TODOS los valores
+          cat > ~/.env << 'ENV'
+          MONGO_URI=$MONGO_URI
+          PORT=$PORT
+          BASE_FRONT_URL=$BASE_FRONT_URL
+          GMAIL_APP_TOKEN=$GMAIL_APP_TOKEN
+          GMAIL_MAIL=$GMAIL_MAIL
+          SMTP_FROM=$SMTP_FROM
+          OPENPAY_COMERCE_ID=$OPENPAY_COMERCE_ID
+          OPENPAY_PUBLIC_KEY=$OPENPAY_PUBLIC_KEY
+          OPENPAY_API_URL=$OPENPAY_API_URL
+          OPENPAY_SECRET_KEY=$OPENPAY_SECRET_KEY
+          ENCRYPTION_KEY=$ENCRYPTION_KEY
+          AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+          AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+          AWS_REGION=$AWS_REGION
+          JWT_SECRET=$JWT_SECRET
+          ENV
+
+          # 2) Login a ECR desde el servidor
+          export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+          export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+          export AWS_REGION=$AWS_REGION
+          aws ecr get-login-password --region $AWS_REGION | sudo docker login --username AWS --password-stdin $AWS_ECR_URI
+
+          # 3) Desplegar la nueva imagen desde ECR
+          # Guardar ID de la imagen actualmente en uso antes de reemplazarla
+          OLD_IMAGE=\$(sudo docker inspect --format='{{.Image}}' odm-back 2>/dev/null || true)
+
+          sudo docker pull $AWS_ECR_URI:latest
+
+          sudo docker rm -f odm-back || true
+          sudo docker run -d \
+            --name odm-back \
+            --env-file ~/.env \
+            -p $PORT:$PORT \
+            --restart unless-stopped \
+            $AWS_ECR_URI:latest
+
+          # 4) Verificar que el contenedor quede en estado Running
+          STATUS=\$(sudo docker inspect -f '{{.State.Running}}' odm-back)
+          if [ "\$STATUS" != "true" ]; then
+            echo "❌ Error: el contenedor 'odm-back' no está en ejecución."
+            exit 1
+          fi
+          echo "✅ Contenedor 'odm-back' en ejecución."
+
+          # 5) Eliminar solo la imagen anterior para liberar disco
+          if [ -n "\$OLD_IMAGE" ]; then
+            sudo docker rmi \$OLD_IMAGE || true
+          fi
+          # Limpiar capas huérfanas (dangling), sin tocar imágenes en uso
+          sudo docker image prune -f
+          EOF

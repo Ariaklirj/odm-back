@@ -44,7 +44,7 @@ const createInscription = async (req, res, next) => {
     });
 
     const verificationUrl =
-      `${process.env.FRONTEND_BASE_URL}/inscripcion/paso-3` +
+      `${process.env.BASE_FRONT_URL}/inscripcion/paso-3` +
       `?id=${userData._id}` +
       `&token=${verificationToken}` +
       `&plan=${encodeURIComponent(plan)}` +
