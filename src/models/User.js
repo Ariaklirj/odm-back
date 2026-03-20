@@ -19,6 +19,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    role: {
+      type: String,
+      enum: ['user', 'superAdmin', 'root'],
+      default: 'user',
+    },
   },
   { timestamps: true }
 );

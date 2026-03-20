@@ -8,6 +8,7 @@ const {
   updateDegree,
   deleteDegree,
 } = require('../controllers/degreeController');
+const adminGuard = require('../middlewares/adminGuard');
 
 const router = Router();
 
@@ -15,8 +16,8 @@ router.get('/list', listDegrees);
 router.get('/', getAllDegrees);
 router.get('/slug/:slug', getDegreeBySlug);
 router.get('/:id', getDegreeById);
-router.post('/', createDegree);
-router.put('/:id', updateDegree);
-router.delete('/:id', deleteDegree);
+router.post('/', adminGuard, createDegree);
+router.put('/:id', adminGuard, updateDegree);
+router.delete('/:id', adminGuard, deleteDegree);
 
 module.exports = router;

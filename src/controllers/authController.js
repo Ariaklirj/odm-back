@@ -29,12 +29,12 @@ async function login(req, res) {
   }
 
   const token = jwt.sign(
-    { user_id: user._id, email: user.email },
+    { user_id: user._id, email: user.email, role: user.role },
     JWT_SECRET,
     { expiresIn: JWT_EXPIRES }
   );
 
-  res.json({ token, user_id: user._id });
+  res.json({ token, user_id: user._id, role: user.role });
 }
 
 module.exports = { login };
