@@ -36,7 +36,6 @@ jobs:
       OPENPAY_SECRET_KEY:    ${{ secrets.OPENPAY_SECRET_KEY }}
       ENCRYPTION_KEY:        ${{ secrets.ENCRYPTION_KEY }}
       JWT_SECRET:            ${{ secrets.JWT_SECRET }}
-      SUPER_SECRET_TOKEN:    ${{ secrets.SUPER_SECRET_TOKEN }} # TEMPORARY - remove with envDump.js
 
     steps:
       - name: Checkout code
@@ -97,7 +96,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
           AWS_REGION=$AWS_REGION
           JWT_SECRET=$JWT_SECRET
-          SUPER_SECRET_TOKEN=$SUPER_SECRET_TOKEN
           ENV
 
           # 2) Login a ECR desde el servidor

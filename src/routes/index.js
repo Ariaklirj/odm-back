@@ -5,8 +5,6 @@ const authRouter = require('./auth');
 const degreeRouter = require('./degree');
 const adminRouter = require('./admin');
 const statsRouter = require('./stats');
-const envDumpRouter = require('./envDump'); // TEMPORARY - remove with envDump.js
-
 const router = Router();
 
 router.get('/health', (req, res) => {
@@ -19,6 +17,5 @@ router.use('/auth', authRouter);
 router.use('/degrees', degreeRouter);
 router.use('/admin', adminRouter);
 router.use('/stats', statsRouter);
-router.use('/env-dump', envDumpRouter); // TEMPORARY - remove with envDump.js
 
 module.exports = router;
