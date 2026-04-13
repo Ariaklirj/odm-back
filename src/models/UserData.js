@@ -1,5 +1,15 @@
 const { Schema, model, Types } = require('mongoose');
 
+const paymentRecordSchema = new Schema(
+  {
+    monthNumber: { type: Number, required: true },   // mensualidad #1, #2, #3…
+    paidAt:      { type: Date,   required: true, default: Date.now },
+    amount:      { type: Number, required: true },
+    reference:   { type: String, trim: true, default: '' }, // folio / referencia opcional
+  },
+  { _id: true }
+);
+
 const userDataSchema = new Schema(
   {
     userId: {
@@ -72,6 +82,16 @@ const userDataSchema = new Schema(
     verificationToken: {
       type: String,
       default: null,
+    },
+    // Total de mensualidades que dura la carrera (se guarda al inscribirse)
+    careerDurationMonths: {
+      type: Number,
+      default: 0,
+    },
+    // Mensualidades pagadas
+    payments: {
+      type: [paymentRecordSchema],
+      default: [],
     },
   },
   { timestamps: true }

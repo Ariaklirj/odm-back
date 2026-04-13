@@ -36,6 +36,7 @@ jobs:
       OPENPAY_SECRET_KEY:    ${{ secrets.OPENPAY_SECRET_KEY }}
       ENCRYPTION_KEY:        ${{ secrets.ENCRYPTION_KEY }}
       JWT_SECRET:            ${{ secrets.JWT_SECRET }}
+      ROOT_SECRET_KEY:       ${{ secrets.ROOT_SECRET_KEY }}
 
     steps:
       - name: Checkout code
@@ -96,6 +97,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
           AWS_REGION=$AWS_REGION
           JWT_SECRET=$JWT_SECRET
+          ROOT_SECRET_KEY=$ROOT_SECRET_KEY
           ENV
 
           # 2) Login a ECR desde el servidor
