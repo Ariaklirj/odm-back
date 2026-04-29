@@ -3,7 +3,7 @@ const MasterDegree = require('../models/MasterDegree');
 // GET /api/master-degrees/list
 const listMasterDegrees = async (req, res, next) => {
   try {
-    const masterDegrees = await MasterDegree.find({ isActive: true }, '_id name slug').sort({ name: 1 });
+    const masterDegrees = await MasterDegree.find({ isActive: true }, '_id name slug bannerImageS3').sort({ name: 1 });
     return res.status(200).json({ success: true, data: masterDegrees });
   } catch (error) {
     next(error);

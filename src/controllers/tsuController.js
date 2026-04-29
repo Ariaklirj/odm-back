@@ -3,7 +3,7 @@ const TSU = require('../models/TSU');
 // GET /api/tsu/list
 const listTSUs = async (req, res, next) => {
   try {
-    const tsus = await TSU.find({ isActive: true }, '_id name slug').sort({ name: 1 });
+    const tsus = await TSU.find({ isActive: true }, '_id name slug bannerImageS3').sort({ name: 1 });
     return res.status(200).json({ success: true, data: tsus });
   } catch (error) {
     next(error);

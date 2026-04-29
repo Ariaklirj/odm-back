@@ -3,7 +3,7 @@ const Degree = require('../models/Degree');
 // GET /api/degrees/list
 const listDegrees = async (req, res, next) => {
   try {
-    const degrees = await Degree.find({ isActive: true }, '_id name slug').sort({ name: 1 });
+    const degrees = await Degree.find({ isActive: true }, '_id name slug bannerImageS3').sort({ name: 1 });
     return res.status(200).json({ success: true, data: degrees });
   } catch (error) {
     next(error);

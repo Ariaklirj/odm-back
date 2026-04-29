@@ -3,7 +3,7 @@ const Speciality = require('../models/Speciality');
 // GET /api/specialities/list
 const listSpecialities = async (req, res, next) => {
   try {
-    const specialities = await Speciality.find({ isActive: true }, '_id name slug').sort({ name: 1 });
+    const specialities = await Speciality.find({ isActive: true }, '_id name slug bannerImageS3').sort({ name: 1 });
     return res.status(200).json({ success: true, data: specialities });
   } catch (error) {
     next(error);
